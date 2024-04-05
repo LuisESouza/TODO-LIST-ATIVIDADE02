@@ -6,6 +6,7 @@ const schemaTask = new Schema({
     description: String,
     date: Date,
     taskPriority: Number,
+    categoryTask: String,
 });
 
 const modeloTask = mongoose.model('Task', schemaTask);

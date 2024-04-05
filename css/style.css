@@ -17,13 +17,20 @@ body {
     color: white;
 }
 
-.imgProfile,
 .imgMenu {
     max-width: 17%;
     height: auto;
 }
 
+.imgProfile{
+    max-width: 13%;
+}
+
 /* BODY */
+#main {
+    position: relative;
+}
+
 .content-home {
     color: white;
     display: flex;
@@ -49,37 +56,70 @@ body {
 
 /* MENU BOTTOM */
 .menu-bottom {
-    display: flex;
     position: fixed;
     bottom: 0;
-    padding: 5px;
-    height: 80px;
     width: 100%;
     background-color: #363636;
-    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.navigator-bottom {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
 }
 
 .btn{
     background-color: transparent;
-    border: none;
     color: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; 
+    font-size: smaller; 
+    cursor: pointer;
 }
 
-.btn-plus{
+.btn-plus {
     background-color: #8687E7;
     border-radius: 50%;
-}
-
-.btn-plus img{
-    scale: 0.7;
-}
-
-.navigator-bottom{
     display: flex;
+    position: absolute;
+    margin-bottom: 120px;
+}
+
+.btn-plus img {
+    scale: 0.6;
 }
 
 /* FORMS */
-form{
+form {
     padding: 20px;
-    background-color:#363636;
+    background-color: #363636;
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+
+    border-radius: 10px;
+    width: 100%;
+
+    color: white;
+}
+
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+}
+.form-inputs input, textarea{
+    width: 100%;
+    height: 35px;
+    resize: none;
+}
+
+.form-buttons{
+    text-align: center;
+    background-color: #121212;
 }
