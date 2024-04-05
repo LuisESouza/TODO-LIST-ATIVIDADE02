@@ -69,6 +69,14 @@ body {
     align-items: center; 
 }
 
+.btn img{
+    width: 65%;
+}
+
+#btn-calendar{
+    margin-right: 40px;
+}
+
 .btn{
     background-color: transparent;
     color: white;
@@ -86,11 +94,11 @@ body {
     border-radius: 50%;
     display: flex;
     position: absolute;
-    margin-bottom: 120px;
+    margin-bottom: 65px;
 }
 
 .btn-plus img {
-    scale: 0.6;
+    scale: 0.5;
 }
 
 /* FORMS */

@@ -43,6 +43,10 @@ function renderAddTask() {
     addTaskForm = document.getElementById("add-task-form");
 }
 
+function renderCategory(){
+
+}
+
 export function toggleAddTaskMenu() {
     if (!isMenuOpen) {
         renderAddTask();
