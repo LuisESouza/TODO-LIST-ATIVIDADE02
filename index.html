@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navigator-top">
             <img class="imgMenu" src="assets/image.png" alt="">
             <p>Index</p>
             <img class="imgProfile" src="assets/imgPessoa.png" alt="">
@@ -17,17 +17,66 @@
 
     <main id="main">
         
-        <section class="content">
+        <section class="contents">
             <div class="content-home">
                 <img src="assets/image copy.png" alt="">
-                <p>What do you want to do today?</p>
-                <p>Tap + to add your tasks</p>
+                <p class="textLarge">What do you want to do today?</p>
+                <p class="textSmall">Tap + to add your tasks</p>
             </div>
+
+            <form>
+                <div class="form-inputs">
+                    <input type="text" placeholder="name task">
+
+                    <textarea name="" id="" cols="30" rows="10" placeholder="description task" style="resize: none; width: 200px; height: 20px;"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button>
+                        Timer
+                        <img src="" alt="">
+                    </button>
+
+                    <button>
+                        Tag
+                        <img src="" alt="">
+                    </button>
+
+                    <button>
+                        Flag
+                        <img src="" alt="">
+                    </button>
+                </div>
+            </form>
         </section>
 
-        <div class="menu-down">
-                
-        </div>
+        <footer class="menu-bottom">
+            <nav class="navigator-bottom">
+                        <button class="btn">
+                            <img src="assets/menuDown/iconHome.png" alt="">
+                            Home
+                        </button>
+
+                        <button class="btn">
+                            <img src="assets/menuDown/iconCalendar.png" alt="">
+                            Calendar
+                        </button>
+
+                        <button class="btn btn-plus">
+                            <img src="assets/menuDown/iconMore.png" alt="">
+                        </button>
+
+                        <button class="btn">
+                            <img src="assets/menuDown/iconClock.png" alt="">
+                            Clock
+                        </button>
+
+                        <button class="btn">
+                            <img src="assets/menuDown/iconUser.png" alt="">
+                            Profile
+                        </button>
+            </nav>
+        </footer>
     </main>
 </body>
 </html>
