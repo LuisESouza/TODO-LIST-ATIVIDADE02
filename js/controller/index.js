@@ -1,17 +1,45 @@
-import * as viewMenu from "../view/menuView.js"
-// const express = require("express")
-// const mongoose = require('mongoose')
-// const MongoMemoryServer = require('mongodb-memory-server').MongoMemoryServer
-// const task = require("../model/task")
-//const viewMenu = require("../view/menuView");
-const btnPlus = document.getElementById("btn-plus");
+const express = require("express");
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
+const task = require("../model/task");
 
-btnPlus.addEventListener("click", ()=>{
-    viewMenu.toggleAddTaskMenu();
-});
+const setup = async () => {
+    const mongod = await MongoMemoryServer.create();
+    await mongoose.connect(`${mongod.getUri()}banco`);
 
-function start(){
-    viewMenu.renderIndex();
-}
+    const app = express();
+    
+    app.use(express.json());
 
-start();
+    app.get("/", (req, res) => {
+        res.send("Online");
+    });
+
+    app.post("/task", async (req, res) => {
+        console.log(req.body);
+        const {
+            nome,
+            description,
+            date,
+            taskPriority,
+            categoryTask
+        } = req.body;
+
+        const newTask = new task({
+            nome: nome,
+            description: description,
+            date: date,
+            taskPriority: taskPriority,
+            categoryTask: categoryTask
+        });
+        await newTask.save();
+        console.log("Pessoa salva:");
+        res.send(newTask);
+    });
+
+    app.listen(3000, () => {
+        console.log("http://localhost:3000");
+    });
+};
+
+setup();

@@ -2,7 +2,7 @@ const section = document.querySelector(".contents");
 let addTaskForm = null;
 let isMenuOpen = false;
 
-export function renderIndex(){
+function renderIndex(){
     const markup =`
     <div class="content-home">
         <img src="assets/image copy.png" alt="">
@@ -21,7 +21,7 @@ function renderAddTask() {
             <h3>Add Task</h3>
             <div class="form-inputs">
                 <input type="text" placeholder="name task">
-                <textarea name="" id="" cols="30" rows="10" placeholder="description task"></textarea>
+                <input type="text" placeholder="description task">
             </div>
             <div class="form-buttons">
                 <button>
@@ -47,7 +47,7 @@ function renderCategory(){
 
 }
 
-export function toggleAddTaskMenu() {
+function toggleAddTaskMenu() {
     if (!isMenuOpen) {
         renderAddTask();
         isMenuOpen = true;
@@ -57,3 +57,8 @@ export function toggleAddTaskMenu() {
         isMenuOpen = false;
     }
 }
+
+module.exports = {
+    renderIndex,
+    toggleAddTaskMenu
+};
