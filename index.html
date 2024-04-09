@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -24,32 +25,34 @@
         <footer class="menu-bottom">
             <nav class="navigator-bottom">
                 <button class="btn" id="btn-home">
-                    <img src="assets/menuDown/iconHome.png" alt="">
+                    <i class="fas fa-home"></i> <!-- Ícone home -->
                     Home
                 </button>
 
                 <button class="btn" id="btn-calendar">
-                    <img src="assets/menuDown/iconCalendar.png" alt="">
-                    Calendar
-                </button>
-
-                <button class="btn-plus" id="btn-plus">
-                    <img src="assets/menuDown/iconMore.png" alt="">
-                </button>
-
-                <button class="btn" id="btn-clock">
-                    <img src="assets/menuDown/iconClock.png" alt="">
+                    <i class="fas fa-calendar-alt"></i>
                     Clock
                 </button>
-
+        
+                <button class="btn-plus" id="btn-plus">
+                    <i class="fas fa-plus"></i>
+                </button>
+                
+                <button class="btn" id="btn-clock">
+                    <i class="fas fa-clock"></i>
+                    Clock
+                </button>
+        
                 <button class="btn" id="btn-profile">
-                    <img src="assets/menuDown/iconUser.png" alt="">
+                    <i class="fas fa-user"></i>
                     Profile
                 </button>
             </nav>
         </footer>
+        
     </main>
 
+    <script src="js/view/menuView.js"></script>
     <script type="module" src="js/controller/index.js"></script>
 </body>
 </html>

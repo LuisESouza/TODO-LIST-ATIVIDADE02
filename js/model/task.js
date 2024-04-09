@@ -2,12 +2,12 @@ const { Schema } = require("mongoose");
 const mongoose = require('mongoose');
 
 const schemaTask = new Schema({
-    id: Number,
     nome: String,
     description: String,
     date: Date,
     taskPriority: Number,
     categoryTask: String,
+    taskReady: Boolean,
 });
 
 const modeloTask = mongoose.model('Task', schemaTask);

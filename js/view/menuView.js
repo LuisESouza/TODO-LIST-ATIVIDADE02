@@ -1,4 +1,5 @@
 const section = document.querySelector(".contents");
+const btnPlus = document.querySelector("#btn-plus");
 let addTaskForm = null;
 let isMenuOpen = false;
 
@@ -14,40 +15,50 @@ function renderIndex(){
     section.innerHTML = markup;
 }
 
-
 function renderAddTask() {
     const markup = `
-        <form id="add-task-form">
-            <h3>Add Task</h3>
-            <div class="form-inputs">
-                <input type="text" placeholder="name task">
-                <input type="text" placeholder="description task">
-            </div>
-            <div class="form-buttons">
-                <button>
-                    Timer
-                    <img src="" alt="">
-                </button>
-                <button>
-                    Tag
-                    <img src="" alt="">
-                </button>
-                <button>
-                    Flag
-                    <img src="" alt="">
-                </button>
-            </div>
-        </form>
+            <form class="form-control" id="add-task-form">
+                <div class="form-tittle">
+                    <h3>Add Task</h3>
+                </div>
+                
+                <div class="form-inputs">
+                    <input type="text" placeholder="name task" id="taskName">
+                    <input type="text" placeholder="description task" id="taskDesc">
+                </div>
+                <div class="form-buttons">
+                    <div>
+                        <button>
+                            Timer
+                            <img src="" alt="">
+                        </button>
+                        <button>
+                            Tag
+                            <img src="" alt="">
+                        </button>
+                        <button>
+                            Flag
+                            <img src="" alt="">
+                        </button>
+                    </div>
+
+                    <div class="form-submit">
+                        <button>Send</button>
+                    </div>
+                </div>
+            </form>
     `;
     section.innerHTML = markup;
     addTaskForm = document.getElementById("add-task-form");
 }
 
-function renderCategory(){
-
+function renderAddFlag(){
+    const markup = `
+        
+    `
 }
 
-function toggleAddTaskMenu() {
+btnPlus.addEventListener("click", (event)=>{
     if (!isMenuOpen) {
         renderAddTask();
         isMenuOpen = true;
@@ -56,9 +67,6 @@ function toggleAddTaskMenu() {
         renderIndex();
         isMenuOpen = false;
     }
-}
+})
 
-module.exports = {
-    renderIndex,
-    toggleAddTaskMenu
-};
+renderIndex();

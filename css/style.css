@@ -69,12 +69,8 @@ body {
     align-items: center; 
 }
 
-.btn img{
-    width: 65%;
-}
-
-#btn-calendar{
-    margin-right: 40px;
+.navigator-bottom .fas{
+    font-size: 27px;
 }
 
 .btn{
@@ -92,42 +88,65 @@ body {
 .btn-plus {
     background-color: #8687E7;
     border-radius: 50%;
-    display: flex;
     position: absolute;
     margin-bottom: 65px;
+    width: 70px;
+    height: 70px;
 }
 
-.btn-plus img {
-    scale: 0.5;
+.btn-plus .fas {
+    color: white;
+    font-size: 24px;
 }
+
+#btn-clock{margin-left: 30px;}
+#btn-calendar{margin-right: 30px;}
 
 /* FORMS */
-form {
+form {  
     padding: 20px;
     background-color: #363636;
-    position: absolute;
-    z-index: 1;
-    margin: auto;
-
     border-radius: 10px;
-    width: 100%;
-
+    width: 97%;
+    margin: auto;
+    margin-top: 20vh;
     color: white;
 }
 
+
+
 .form-inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #121212;
+    margin-top: 15px;
 }
-.form-inputs input, textarea{
+
+.form-inputs input {
     width: 100%;
     height: 35px;
     resize: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    padding: 20px; 
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    margin-top: 10px;
+}
+
+.form-inputs input:focus-within {
+    border: 1px solid #979797;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-inputs input:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .form-buttons{
-    text-align: center;
-    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
