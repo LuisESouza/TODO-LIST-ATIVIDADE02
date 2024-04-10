@@ -28,22 +28,24 @@ function renderAddTask() {
                 </div>
                 <div class="form-buttons">
                     <div>
-                        <button>
-                            Timer
-                            <img src="" alt="">
+                        <button class="" id="btn-stopwatch">
+                            <i class="fas fa-stopwatch"></i>
                         </button>
-                        <button>
-                            Tag
-                            <img src="" alt="">
+                        
+                        <button class="" id="btn-flag">
+                        <i class="fas fa-tag"></i>
                         </button>
-                        <button>
-                            Flag
-                            <img src="" alt="">
+
+                        <button class="" id="btn-flag">
+                        <i class="fas fa-flag"></i>
                         </button>
+
                     </div>
 
                     <div class="form-submit">
-                        <button>Send</button>
+                        <button>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -58,6 +60,8 @@ function renderAddFlag(){
     `
 }
 
+
+
 btnPlus.addEventListener("click", (event)=>{
     if (!isMenuOpen) {
         renderAddTask();
@@ -69,4 +73,4 @@ btnPlus.addEventListener("click", (event)=>{
     }
 })
 
-renderIndex();
+//renderIndex();

@@ -69,7 +69,7 @@ body {
     align-items: center; 
 }
 
-.navigator-bottom .fas{
+.fas{
     font-size: 27px;
 }
 
@@ -149,4 +149,48 @@ form {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+}
+
+.line{
+    border: 1px solid white;
+    display: block;
+}
+
+.contents{
+    color: white;
+    text-align: center;
+}
+
+.table-task{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+}
+.table-task button{
+    height: 60px;
+    border-radius: 5px;
+    background-color: #272727;
+    border: none;
+    color: white;
+}
+
+
+.task-priority{
+    width: 90%;
+    background-color: #363636;
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.div-buttonDown button{
+border: 50px;
+border-radius: 5px;
+padding: 10px;
+
+
 }
