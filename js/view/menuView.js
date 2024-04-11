@@ -1,5 +1,6 @@
 const section = document.querySelector(".contents");
 const btnPlus = document.querySelector("#btn-plus");
+
 let addTaskForm = null;
 let isMenuOpen = false;
 
@@ -32,7 +33,7 @@ function renderAddTask() {
                             <i class="fas fa-stopwatch"></i>
                         </button>
                         
-                        <button class="" id="btn-flag">
+                        <button class="" id="btn-tag">
                         <i class="fas fa-tag"></i>
                         </button>
 
@@ -50,12 +51,19 @@ function renderAddTask() {
                 </div>
             </form>
     `;
+
     section.innerHTML = markup;
     addTaskForm = document.getElementById("add-task-form");
+
+    const btnFlag = document.querySelector("#btn-flag");
+    btnFlag.addEventListener("click", (event) => {
+        event.preventDefault();
+        showMenusButton(renderAddFlag());
+    });
 }
 
 function renderAddFlag() {
-    const numOfButtons = 10; // Número total de botões desejado
+    const numOfButtons = 10;
     let buttonsMarkup = '';
 
     for (let i = 1; i <= numOfButtons; i++) {
@@ -68,7 +76,7 @@ function renderAddFlag() {
     }
 
     const markup = `
-        <div class="task-priority">
+        <div class="task-priority" id="task-priority">
             <div class="task-priority-tittle">
                 <h4>Task Priority</h4>
             </div>
@@ -86,22 +94,23 @@ function renderAddFlag() {
         </div>
     `;
 
-    section.innerHTML = markup;
+    section.insertAdjacentHTML("afterbegin", markup)
+    addTaskForm = document.getElementById("task-priority");
 }
 
+btnPlus.addEventListener("click", ()=>{
+    showMenusButton(renderAddTask());
+});
 
-
-
-btnPlus.addEventListener("click", (event)=>{
+function showMenusButton(functions, ){
     if (!isMenuOpen) {
-        renderAddTask();
+        functions;
         isMenuOpen = true;
     } else {
-        section.removeChild(addTaskForm);
+       
         renderIndex();
         isMenuOpen = false;
     }
-})
+}
 
-//renderIndex();
-renderAddFlag();
+renderIndex();
