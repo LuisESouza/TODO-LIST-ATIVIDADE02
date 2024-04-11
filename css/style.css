@@ -155,27 +155,7 @@ form {
     border: 1px solid white;
     display: block;
 }
-
-.contents{
-    color: white;
-    text-align: center;
-}
-
-.table-task{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    
-}
-.table-task button{
-    height: 60px;
-    border-radius: 5px;
-    background-color: #272727;
-    border: none;
-    color: white;
-}
-
-
+/* MENU PRIORITY */
 .task-priority{
     width: 90%;
     background-color: #363636;
@@ -183,14 +163,53 @@ form {
     padding: 20px;
     margin: auto;
     
+    color: white;
+
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
+.task-priority-tittle{
+    text-align: center;
+}
+
+.table-task{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.table-task button{
+    height: 60px;
+    border-radius: 5px;
+    background-color: #272727;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.table-task button:hover{
+    background-color: #8687E7;
+}
+
+.div-buttonDown{
+    display: flex;
+    justify-content: space-between;
+}
+
 .div-buttonDown button{
-border: 50px;
-border-radius: 5px;
-padding: 10px;
+    border: 50px;
+    border-radius: 5px;
+    font-size: medium;
+    padding: 20px;
+    width: 140px;
 
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
 
+.div-buttonDown button:hover{
+    background-color: #8687E7
 }

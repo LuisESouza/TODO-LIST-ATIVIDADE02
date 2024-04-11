@@ -54,11 +54,41 @@ function renderAddTask() {
     addTaskForm = document.getElementById("add-task-form");
 }
 
-function renderAddFlag(){
+function renderAddFlag() {
+    const numOfButtons = 10; // Número total de botões desejado
+    let buttonsMarkup = '';
+
+    for (let i = 1; i <= numOfButtons; i++) {
+        buttonsMarkup += `
+            <button>
+                <i class="fas fa-flag"></i>
+                <p>${i}</p>
+            </button>
+        `;
+    }
+
     const markup = `
-        
-    `
+        <div class="task-priority">
+            <div class="task-priority-tittle">
+                <h4>Task Priority</h4>
+            </div>
+            
+            <span class="line"></span>
+
+            <div class="table-task">
+                ${buttonsMarkup}
+            </div>
+
+            <div class="div-buttonDown">
+                <button>Cancel</button>
+                <button>Saved</button>
+            </div>
+        </div>
+    `;
+
+    section.innerHTML = markup;
 }
+
 
 
 
@@ -74,3 +104,4 @@ btnPlus.addEventListener("click", (event)=>{
 })
 
 //renderIndex();
+renderAddFlag();
