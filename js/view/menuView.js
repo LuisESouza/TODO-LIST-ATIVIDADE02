@@ -1,7 +1,9 @@
 const section = document.querySelector(".contents");
 const btnPlus = document.querySelector("#btn-plus");
+const body = document.querySelector("#body");
 
-let addTaskForm = null;
+
+let addForms = null;
 let isMenuOpen = false;
 
 function renderIndex(){
@@ -15,6 +17,10 @@ function renderIndex(){
 
     section.innerHTML = markup;
 }
+
+
+
+
 
 function renderAddTask() {
     const markup = `
@@ -53,14 +59,28 @@ function renderAddTask() {
     `;
 
     section.innerHTML = markup;
-    addTaskForm = document.getElementById("add-task-form");
+    const btnTag = document.querySelector("#btn-tag");
+    btnTag.addEventListener("click", (event)=>{
+        event.preventDefault();
+        showMenusButton(renderChooseCategory());
+    });
 
     const btnFlag = document.querySelector("#btn-flag");
-    btnFlag.addEventListener("click", (event) => {
+    btnFlag.addEventListener("click", (event)=>{
         event.preventDefault();
         showMenusButton(renderAddFlag());
     });
 }
+
+
+
+
+
+
+
+
+
+
 
 function renderAddFlag() {
     const numOfButtons = 10;
@@ -95,8 +115,110 @@ function renderAddFlag() {
     `;
 
     section.insertAdjacentHTML("afterbegin", markup)
-    addTaskForm = document.getElementById("task-priority");
 }
+
+
+
+
+
+
+function renderChooseCategory(){
+    const markup = `
+    <div class="chooseCategory">
+        <div class="chooseCategory-tittle">
+            <h4>Choose Category</h4>
+        </div>
+
+        <span class="line"></span>
+
+        <section class="chooseCategory-Container">
+            
+
+            <div class="Category">
+                <button id="btn-createCategory" style="cursor:pointer; background-color: #80FFD1; padding: 20px; border-radius: 10px; border: none;">
+                    <i class="fas fa-plus" style="color: #00A369;"></i>
+                </button>   
+                <div class="text-category">
+                    <p>Create New</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="div-buttonAddCategory">
+            <button id="btn-addCategory">
+                Add Category
+            </button>
+        </div>
+    </div>
+    `
+    section.insertAdjacentHTML("afterbegin", markup);
+    const btnCreateCat = document.querySelector("#btn-createCategory");
+    btnCreateCat.addEventListener("click", (event)=>{
+        event.preventDefault();
+
+        showMenusButton(renderCreateCategory());
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function renderCreateCategory(){
+    const markup = `
+    <form class="create-category">
+            <div class="create-category-tittle">
+                <h4>Create new Category</h4>
+            </div>
+
+            <div class="form-inputs">
+                <input type="text" placeholder="Category name">
+            </div>
+
+            <div class="category-icon">
+                <p>Category Icon :</p>
+                <button>Choose Icon from library</button>
+            </div>
+
+            <div class="category-color">
+                <div class="category-color-tittle">
+                    <p>Category Color :</p>
+                </div>
+                    
+                <div class="container-colors">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+
+            <div class="create-category-buttons">
+                <button>Cancel</button>
+                <button>Create Category</button>
+            </div>
+    </form>
+    `
+
+    body.innerHTML = markup;
+}
+
+
+
+
+
+
+
+
+
 
 btnPlus.addEventListener("click", ()=>{
     showMenusButton(renderAddTask());
@@ -106,11 +228,7 @@ function showMenusButton(functions, ){
     if (!isMenuOpen) {
         functions;
         isMenuOpen = true;
-    } else {
-       
-        renderIndex();
-        isMenuOpen = false;
-    }
+    } 
 }
 
-renderIndex();
+//renderIndex();

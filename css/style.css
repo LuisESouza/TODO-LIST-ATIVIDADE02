@@ -107,7 +107,8 @@ form {
     padding: 20px;
     background-color: #363636;
     border-radius: 10px;
-    width: 97%;
+    width: 375px;
+    height: 228px;
     margin: auto;
     margin-top: 20vh;
     color: white;
@@ -152,7 +153,7 @@ form {
 }
 
 .line{
-    border: 1px solid white;
+    border: 1px solid #979797;
     display: block;
 }
 /* MENU PRIORITY */
@@ -212,4 +213,136 @@ form {
 
 .div-buttonDown button:hover{
     background-color: #8687E7
+}
+
+/* ChooseCategory */
+.chooseCategory-Container{
+    display: flex;
+    gap: 20px;
+}
+
+.chooseCategory {
+    background-color: #363636;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 327px;
+    height: 556px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.chooseCategory-tittle{
+    text-align: center;
+    padding: 5px;
+}
+
+.Category{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    width: 64px;
+    height: 90px;
+}
+
+.text-category{
+    text-wrap: nowrap;
+    font-size: small;
+}
+
+.text-category p {
+    margin-top: 5px;
+}
+
+.div-buttonAddCategory {
+    text-align: center;
+    align-self: flex-end; 
+    margin-top: auto; 
+}
+
+.div-buttonAddCategory button {
+    background-color: #8687E7;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 289px;
+}
+
+/* Create Category */
+.create-category{
+    margin-top: 0;
+    background-color: #121212;
+}
+
+.category-icon button{
+    padding: 8px 16px 8px 16px;
+    background-color: rgba(255, 255, 255, 0.21);
+    border: none;
+    border-radius: 6px;
+}
+
+.category-icon{
+    margin-top: 15px;
+}
+
+.category-color{
+    margin-top: 15px;
+}
+
+.container-colors {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 350px;
+    flex-wrap: nowrap;
+}
+
+
+.category-color button {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+.create-category-buttons button{
+    padding: 12px 24px 12px 24px;
+    background-color: #8687E7;
+    color: white;
+    border: none;
+}
+
+.create-category-buttons{
+    text-align: center;
+    align-self: flex-end; 
+    margin-top: auto; 
+}
+
+/* Estilos para cada botão de cor */
+.category-color button:nth-child(1) {
+    background-color: red;
+}
+
+.category-color button:nth-child(2) {
+    background-color: blue;
+}
+
+.category-color button:nth-child(3) {
+    background-color: green;
+}
+
+.category-color button:nth-child(4) {
+    background-color: yellow;
+}
+
+.category-color button:nth-child(5) {
+    background-color: purple;
 }
