@@ -43,7 +43,7 @@ function renderAddTask() {
                         <i class="fas fa-tag"></i>
                         </button>
 
-                        <button class="" id="btn-flag">
+                        <button class="" id="btn-category">
                         <i class="fas fa-flag"></i>
                         </button>
 
@@ -65,8 +65,8 @@ function renderAddTask() {
         showMenusButton(renderChooseCategory());
     });
 
-    const btnFlag = document.querySelector("#btn-flag");
-    btnFlag.addEventListener("click", (event)=>{
+    const btnCategory = document.querySelector("#btn-category");
+    btnCategory.addEventListener("click", (event)=>{
         event.preventDefault();
         showMenusButton(renderAddFlag());
     });
@@ -88,7 +88,7 @@ function renderAddFlag() {
 
     for (let i = 1; i <= numOfButtons; i++) {
         buttonsMarkup += `
-            <button>
+            <button value="${i}">
                 <i class="fas fa-flag"></i>
                 <p>${i}</p>
             </button>
@@ -98,7 +98,7 @@ function renderAddFlag() {
     const markup = `
         <div class="task-priority" id="task-priority">
             <div class="task-priority-tittle">
-                <h4>Task Priority</h4>
+                <h4 id="testandoFlag">Task Priority</h4>
             </div>
             
             <span class="line"></span>
@@ -109,12 +109,22 @@ function renderAddFlag() {
 
             <div class="div-buttonDown">
                 <button>Cancel</button>
-                <button>Saved</button>
+                <button>Save</button>
             </div>
         </div>
     `;
 
     section.insertAdjacentHTML("afterbegin", markup)
+
+    const tableTask = document.querySelector(".table-task");
+    tableTask.addEventListener("click", (event) => {
+        const target = event.target.closest('button');
+        if (target) {
+            const taskPriority = document.querySelector("#testandoFlag");
+            let priority = target.value;
+            taskPriority.textContent = priority;
+        }
+    });
 }
 
 
@@ -122,42 +132,43 @@ function renderAddFlag() {
 
 
 
-function renderChooseCategory(){
+
+
+function renderChooseCategory() {
     const markup = `
-    <div class="chooseCategory">
-        <div class="chooseCategory-tittle">
-            <h4>Choose Category</h4>
-        </div>
-
-        <span class="line"></span>
-
-        <section class="chooseCategory-Container">
-            
-
-            <div class="Category">
-                <button id="btn-createCategory" style="cursor:pointer; background-color: #80FFD1; padding: 20px; border-radius: 10px; border: none;">
-                    <i class="fas fa-plus" style="color: #00A369;"></i>
-                </button>   
-                <div class="text-category">
-                    <p>Create New</p>
+        <div class="chooseCategory">
+            <div>
+                <div class="chooseCategory-tittle">
+                    <h4>Choose Category</h4>
                 </div>
+
+                <span class="line"></span>
+
+                <section class="chooseCategory-container">
+                    <div class="Category">
+                        <button id="btn-createCategory" style="cursor:pointer; background-color: #80FFD1; padding: 20px; border-radius: 10px; border: none;">
+                            <i class="fas fa-plus" style="color: #00A369;"></i>
+                        </button>   
+                        <div class="text-category">
+                            <p>Create New</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
 
-        <div class="div-buttonAddCategory">
-            <button id="btn-addCategory">
-                Add Category
-            </button>
+            <div class="div-buttonAddCategory">
+                <button id="btn-addCategory">Add Category</button>
+            </div>
         </div>
-    </div>
-    `
-    section.insertAdjacentHTML("afterbegin", markup);
-    const btnCreateCat = document.querySelector("#btn-createCategory");
-    btnCreateCat.addEventListener("click", (event)=>{
-        event.preventDefault();
+    `;
 
-        showMenusButton(renderCreateCategory());
-    })
+    section.innerHTML = markup;
+
+    const btnCreateCat = document.querySelector("#btn-createCategory");
+    btnCreateCat.addEventListener("click", (event) => {
+        event.preventDefault();
+        renderCreateCategory();
+    });
 }
 
 
@@ -171,52 +182,58 @@ function renderChooseCategory(){
 
 
 
-function renderCreateCategory(){
+function renderCreateCategory() {
+    const predefinedColors = [
+    '#C9CC41','#66CC41',
+    '#41CCA7', '#4181CC',
+    '#41A2CC', '#CC8441', 
+    '#9741CC', '#CC4173', 
+    '#800080', '#8A2BE2', 
+    '#D2691E', '#32CD32', 
+    '#FF4500', '#00BFFF', 
+    '#FF1493', '#008080', '#800000'
+];
+    let buttonsMarkup = '';
+
+    predefinedColors.forEach(color => {
+        buttonsMarkup += `<button style="background-color: ${color}" value="${color}"></button>`;
+    });
+
     const markup = `
     <form class="create-category">
-            <div class="create-category-tittle">
-                <h4>Create new Category</h4>
-            </div>
+        <div>
+        <div class="create-category-tittle">
+            <h4>Create new Category</h4>
+        </div>
 
-            <div class="form-inputs">
-                <input type="text" placeholder="Category name">
-            </div>
+        <div class="form-inputs">
+            <input type="text" placeholder="Category name">
+        </div>
 
-            <div class="category-icon">
-                <p>Category Icon :</p>
-                <button>Choose Icon from library</button>
-            </div>
+        <div class="category-icon">
+            <p>Category Icon :</p>
+            <button>Choose Icon from library</button>
+        </div>
 
-            <div class="category-color">
-                <div class="category-color-tittle">
-                    <p>Category Color :</p>
-                </div>
-                    
-                <div class="container-colors">
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                </div>
+        <div class="category-color">
+            <div class="category-color-tittle">
+                <p>Category Color :</p>
             </div>
-
-            <div class="create-category-buttons">
-                <button>Cancel</button>
-                <button>Create Category</button>
+                
+            <div class="container-colors">
+                ${buttonsMarkup}
             </div>
+        </div>
+        </div>
+        <div class="create-category-buttons">
+            <button>Cancel</button>
+            <button>Create Category</button>
+        </div>
     </form>
-    `
+    `;
 
     body.innerHTML = markup;
 }
-
-
-
-
-
-
-
 
 
 
@@ -231,4 +248,4 @@ function showMenusButton(functions, ){
     } 
 }
 
-//renderIndex();
+renderIndex();
