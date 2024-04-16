@@ -1,11 +1,11 @@
-class indexController{
+class homeController{
     constructor(){
         this.content = document.querySelector("#content");
-        init()
+        this.init()
     }
 
     init() {
-        const View = new indexView();
+        const View = new homeView();
         this.content.innerHTML = View.render();
     }
 }

@@ -1,4 +1,4 @@
-class addTask{
+class addTaskView{
     constructor(){
         
     }
@@ -24,7 +24,7 @@ class addTask{
                         <i class="fas fa-tag"></i>
                         </button>
 
-                        <button class="" id="btn-category">
+                        <button class="" id="btn-flag">
                         <i class="fas fa-flag"></i>
                         </button>
 

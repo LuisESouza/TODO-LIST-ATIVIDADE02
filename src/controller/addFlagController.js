@@ -1,7 +1,7 @@
 class addFlagController{
     constructor(){
         this.content = docment.querySelector("#content");
-        init();
+        this.init();
     }
 
     init() {

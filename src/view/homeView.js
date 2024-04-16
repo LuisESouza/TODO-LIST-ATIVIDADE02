@@ -1,4 +1,4 @@
-class indexView{
+class homeView{
     constructor(){
 
     }

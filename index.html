@@ -16,12 +16,12 @@
         </nav>
     </header>
 
-    <main id="main">       
-        <section class="contents">
+        <section class="contents" id="content">
             
         </section>
 
-        <footer class="menu-bottom">
+    <main id="main">       
+         <footer class="menu-bottom">
             <nav class="navigator-bottom">
                 <button class="btn" id="btn-home">
                     <i class="fas fa-home"></i>
@@ -47,11 +47,33 @@
                     Profile
                 </button>
             </nav>
-        </footer>
-        
+        </footer> 
     </main>
+>
 
-    <script src="js/view/menuView.js"></script>
-    <!-- <script type="module" src="js/controller/index.js"></script> -->
+    <script src="src/controller/homeController.js"></script>
+    <script src="src/view/homeView.js"></script>
+
+    <script src="src/controller/addTaskController.js"></script>
+    <script src="src/view/addTaskView.js"></script>
+
+    <script src="src/controller/addFlagController.js"></script>
+    <script src="src/view/addFlagView.js"></script>
+
+    <script src="src/controller/categoryController.js"></script>
+    <script src="src/view/categoryView.js"></script>
+
+    <script src="src/controller/createCategoryController.js"></script>
+    <script src="src/view/createCategoryView.js"></script>
+
+    <script src="src/Router.js"></script>
+
+
+    <script>
+        const btnPlus = document.querySelector("#btn-plus")
+        btnPlus.addEventListener("click", ()=>{
+            new Router().goTo("addTask");
+        })
+    </script>
 </body>
 </html>

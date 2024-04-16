@@ -1,7 +1,6 @@
 class createCategoryView{
     constructor() {
-        this.content = document.querySelector("#content");
-        init();
+
     }
 
 

@@ -1,11 +1,11 @@
-class chooseCategoryController{
+class addTaskController{
     constructor(){
         this.content = document.querySelector("#content");
-        init();
+        this.init();
     }
 
     init() {
-        const View = new chooseCategoryView();
+        const View = new addTaskView();
         this.content.innerHTML = View.render();
     }
 }
