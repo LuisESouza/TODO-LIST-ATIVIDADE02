@@ -1,7 +1,7 @@
 class addFlagController{
     constructor(){
-        this.content = docment.querySelector("#content");
-        this.init();
+     this.content = document.querySelector("#content");
+     this.init();
     }
 
     init() {

@@ -6,7 +6,7 @@ class addFlagView{
     render(){
         const numOfButtons = 10;
     
-        let buttonsMarkup = numOfButtons.map( (i) => {
+        let buttonsMarkup = numOfButtons.map((i) => {
             return `
                 <button value="${i}">
                     <i class="fas fa-flag"></i>

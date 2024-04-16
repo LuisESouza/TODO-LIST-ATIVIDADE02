@@ -16,12 +16,12 @@
         </nav>
     </header>
 
-        <section class="contents" id="content">
+    <section class="contents" id="content">
             
-        </section>
+    </section>
 
     <main id="main">       
-         <footer class="menu-bottom">
+        <footer class="menu-bottom">
             <nav class="navigator-bottom">
                 <button class="btn" id="btn-home">
                     <i class="fas fa-home"></i>
@@ -49,7 +49,6 @@
             </nav>
         </footer> 
     </main>
->
 
     <script src="src/controller/homeController.js"></script>
     <script src="src/view/homeView.js"></script>
@@ -68,12 +67,22 @@
 
     <script src="src/Router.js"></script>
 
-
     <script>
-        const btnPlus = document.querySelector("#btn-plus")
-        btnPlus.addEventListener("click", ()=>{
-            new Router().goTo("addTask");
-        })
+        window.addEventListener('load', () => {
+            new Router().goTo("home");
+        });
+
+        let isTaskMenuOpen = false;
+        const btnPlus = document.querySelector("#btn-plus");
+        btnPlus.addEventListener("click", () => {
+            if (isTaskMenuOpen) {
+                new Router().goTo("home");
+                isTaskMenuOpen = false;
+            } else {
+                new Router().goTo("addTask");
+                isTaskMenuOpen = true;
+            }
+        }); 
     </script>
 </body>
 </html>

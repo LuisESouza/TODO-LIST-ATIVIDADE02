@@ -92,6 +92,7 @@ body {
     margin-bottom: 65px;
     width: 70px;
     height: 70px;
+    cursor: pointer;
 }
 
 .btn-plus .fas {
