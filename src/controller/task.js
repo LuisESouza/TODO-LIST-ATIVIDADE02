@@ -18,7 +18,7 @@ const setup = async () => {
         //res.send("Online");
     });
 
-    app.post("/task", async (req, res) => {
+    app.post("/tasks", async (req, res) => {
         console.log(req.body);
         const {
             nome,

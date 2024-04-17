@@ -1,7 +1,5 @@
 class categoryView{
-    constructor(){
-        
-    }
+    constructor(){}
 
     render() {
         return `

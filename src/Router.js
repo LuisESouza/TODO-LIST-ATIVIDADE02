@@ -4,7 +4,7 @@ class Router{
             'home': "homeController",
             'addTask': "addTaskController",
             'addFlag': "addFlagController",
-            'addCategory':"chooseCategoryController",
+            'addCategory':"categoryController",
             'createCategory':"createCategoryController",
         }
     }

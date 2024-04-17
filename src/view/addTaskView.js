@@ -1,7 +1,5 @@
 class addTaskView{
-    constructor(){
-        
-    }
+    constructor(){}
 
     render(){
         return `

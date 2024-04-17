@@ -1,7 +1,5 @@
 class homeView{
-    constructor(){
-
-    }
+    constructor(){}
 
     render(){
         return `

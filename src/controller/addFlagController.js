@@ -7,5 +7,10 @@ class addFlagController{
     init() {
         const View = new addFlagView();
         this.content.innerHTML = View.render();
+
+        const btnCancel = document.querySelector("#btn-cancel");
+        btnCancel.addEventListener("click", ()=>{
+            new Router().goTo("addTask");
+        })
     }
 }

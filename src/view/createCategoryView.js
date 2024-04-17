@@ -1,7 +1,5 @@
 class createCategoryView{
-    constructor() {
-
-    }
+    constructor() {}
 
 
     render() {
@@ -48,8 +46,8 @@ class createCategoryView{
             </div>
             </div>
             <div class="create-category-buttons">
-                <button>Cancel</button>
-                <button>Create Category</button>
+                <button id="btn-cancel">Cancel</button>
+                <button id="btn-create">Create Category</button>
             </div>
         </form>
         `

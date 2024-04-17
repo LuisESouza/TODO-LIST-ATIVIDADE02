@@ -28,8 +28,8 @@ class addFlagView{
             </div>
 
             <div class="div-buttonDown">
-                <button>Cancel</button>
-                <button>Save</button>
+                <button id="btn-cancel">Cancel</button>
+                <button id="btn-save">Save</button>
             </div>
         </div>
         `

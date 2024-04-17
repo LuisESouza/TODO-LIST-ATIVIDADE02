@@ -13,6 +13,12 @@ class addTaskController{
         form.addEventListener("submit", (event)=>{
             event.preventDefault();
         })
+        
+        const btnTag = document.querySelector("#btn-tag");
+        btnTag.addEventListener("click", ()=>{
+            new Router().goTo("addCategory");
+        });
+
         const btnFlag = document.querySelector("#btn-flag");
         btnFlag.addEventListener("click", ()=>{
             new Router().goTo("addFlag");
