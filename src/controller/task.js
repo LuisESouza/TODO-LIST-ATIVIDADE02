@@ -11,8 +11,11 @@ const setup = async () => {
     
     app.use(express.json());
 
-    app.get("/", (req, res) => {
-        res.send("Online");
+    app.get("/", async (req, res) => {
+        const tasks = await task.find();
+        res.json(tasks);
+        console.log(tasks);
+        //res.send("Online");
     });
 
     app.post("/task", async (req, res) => {

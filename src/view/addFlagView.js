@@ -4,16 +4,7 @@ class addFlagView{
     }
 
     render(){
-        const numOfButtons = 10;
-    
-        let buttonsMarkup = numOfButtons.map((i) => {
-            return `
-                <button value="${i}">
-                    <i class="fas fa-flag"></i>
-                    <p>${i}</p>
-                </button>
-            `;
-        })
+        const numOfButtons = [1,2,3,4,5,6,7, 8,9,10];
         
         return `
         <div class="task-priority" id="task-priority">
@@ -24,7 +15,16 @@ class addFlagView{
             <span class="line"></span>
 
             <div class="table-task">
-                ${buttonsMarkup}
+                ${
+                    numOfButtons.map((i) => {
+                        return`
+                        <button value="${i}">
+                           <i class="fas fa-flag"></i>
+                           <p>${i}</p>
+                        </button>`
+                        ;
+                    }).join('')
+               }
             </div>
 
             <div class="div-buttonDown">
