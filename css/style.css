@@ -69,8 +69,9 @@ body {
     align-items: center; 
 }
 
-.fas{
-    font-size: 27px;
+.bi{
+    font-size: 24px;
+    color: white;
 }
 
 .btn{
@@ -95,16 +96,11 @@ body {
     cursor: pointer;
 }
 
-.btn-plus .fas {
-    color: white;
-    font-size: 24px;
-}
-
 #btn-clock{margin-left: 30px;}
 #btn-calendar{margin-right: 30px;}
 
 /* FORMS */
-form {  
+form{  
     padding: 20px;
     background-color: #363636;
     border-radius: 10px;
@@ -114,8 +110,6 @@ form {
     margin-top: 20vh;
     color: white;
 }
-
-
 
 .form-inputs{
     margin-top: 15px;
@@ -157,6 +151,25 @@ form {
     border: 1px solid #979797;
     display: block;
 }
+
+
+/* ADD TASK BUTTONS */
+.form-control button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-control button:hover{
+    background-color: #8687E7;
+}
+
+.form-control button:focus{
+    background-color: #8687E7;
+}
+
 /* MENU PRIORITY */
 .task-priority{
     width: 90%;
@@ -192,6 +205,10 @@ form {
 }
 
 .table-task button:hover{
+    background-color: #8687E7;
+}
+
+.table-task button:focus{
     background-color: #8687E7;
 }
 
@@ -320,12 +337,17 @@ form {
     margin-top: 8px;
 }
 
+.category-color button:focus{
+    border: 2px solid white;
+}
+
 .create-category-buttons button{
     padding: 12px 24px 12px 24px;
     color: #8687E7;
     background-color: transparent;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .create-category-buttons button:hover{
