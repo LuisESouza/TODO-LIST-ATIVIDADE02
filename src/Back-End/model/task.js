@@ -1,20 +1,23 @@
-const { Schema } = require("mongoose");
-const mongoose = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const schemaCategory = new Schema({
     categoryTask: String,
     color: String,
-})
+});
 
 const schemaTask = new Schema({
     nome: String,
     description: String,
     date: Date,
     taskPriority: Number,
-    categoryTask: schemaCategory,
+    categoryTask: { type: Schema.Types.ObjectId, ref: 'Category' },
     taskReady: Boolean,
 });
 
-const modeloTask = mongoose.model('Task', schemaTask);
+const Task = model('Task', schemaTask);
+const Category = model('Category', schemaCategory);
 
-module.exports = modeloTask;
+module.exports = {
+    Task: Task,
+    Category: Category
+};

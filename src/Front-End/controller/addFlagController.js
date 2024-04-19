@@ -9,8 +9,13 @@ class addFlagController{
         this.content.innerHTML = View.render();
 
         const btnCancel = document.querySelector("#btn-cancel");
-        btnCancel.addEventListener("click", ()=>{
+        btnCancel.addEventListener("click", () => {
             new Router().goTo("addTask");
+        })
+
+        const btnSave = document.querySelector("btn-save");
+        btnSave.addEventListener("click", () => {
+            
         })
     }
 }
